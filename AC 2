@@ -1,0 +1,48 @@
+npm install react-router-dom
+
+
+import { BrowserRouter, Route, Link } from 'react-router-dom';
+
+
+import React from 'react';
+
+const MinhaRota = () => {
+  return (
+    <div>
+      <h1>Minha Rota</h1>
+      <p>Este é o conteúdo da minha rota.</p>
+    </div>
+  );
+};
+
+export default MinhaRota;
+
+
+import React from 'react';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
+import MinhaRota from './MinhaRota';
+
+const App = () => {
+  return (
+    <BrowserRouter>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/minha-rota">Minha Rota</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Route path="/minha-rota" component={MinhaRota} />
+      </div>
+    </BrowserRouter>
+  );
+};
+
+export default App;
+
+npm start
